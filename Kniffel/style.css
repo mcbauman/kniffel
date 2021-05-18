@@ -1,0 +1,37 @@
+html{
+    background-image: url("pic.jpeg");
+    background-size: cover;
+    background-color: black;
+    text-align: center;
+    font-family: 'Gruppo', cursive;
+    font-size: 1.8em;
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+}
+
+table{
+   background-color: rgba(0, 0, 0, 0.7);
+   color: white;
+   margin: 15px;
+}
+
+#top{
+    width: 60%;
+}
+
+#gefalleneWürfel{
+    font-size: 2em;
+    background-color: white;
+    color: black;
+}
+
+#Wurf{
+   font-size: 2em;
+}
+
+#ergebnisliste{
+    width: 98%;
+}
