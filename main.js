@@ -313,7 +313,7 @@
      setKniffel.addEventListener("click", function(){
         if(wk>=0){alert("nicht Schummeltn! Kniffel hast Du schon")}else{
         sumValEx=0;
-        if(val1==val2&&val2==val3&&val3==val4&&val4==val5&&va1>0){sumValEx=50}else{sumValEx=0};
+        if(val1==val2&&val2==val3&&val3==val4&&val4==val5&&val1>0){sumValEx=50}else{sumValEx=0};
          Kniffel.textContent = sumValEx;
          wk=sumValEx;
          if(sumValEx>20){Kniffel.style.color="lightgreen";}
