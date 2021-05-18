@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css" >
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+<link href="https://fonts.googleapis.com/css2?family=Gruppo&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Kniffel</title>
+</head>
+<body>
+<!-- Würfelbereich -->
+    <nav>
+        <table id="Top">
+            <tr>
+                <th scope=col>
+                    Würfel 1
+                </th>
+                <th scope=col>
+                    Würfel 2
+                </th>
+                <th scope=col>
+                    Würfel 3
+                </th>
+                <th scope=col>
+                    Würfel 4
+                </th>
+                <th scope=col>
+                    Würfel 5
+                </th>
+            </tr>
+            <tr id="gefalleneWürfel">
+                <td id="Wurfel1">-</td>
+                <td id="Wurfel2">-</td>
+                <td id="Wurfel3">-</td>
+                <td id="Wurfel4">-</td>
+                <td id="Wurfel5">-</td>
+            </tr>
+            <tr>
+                <td>
+                    <button>
+                        <input type="checkbox" name="W1" id="WurfSichern1" value="true">
+                        <label for="WurfSichern1">behalten</label>
+                    </button>
+                </td>
+                <td>
+                    <button>
+                        <input type="checkbox" name="W2" id="WurfSichern2" value="true">
+                        <label for="WurfSichern2">behalten</label>
+                    </button>
+                </td>
+                <td>
+                    <button>
+                        <input type="checkbox" name="W3" id="WurfSichern3" value="true">
+                        <label for="WurfSichern3">behalten</label>
+                    </button>
+                </td>
+                <td>
+                    <button>
+                        <input type="checkbox" name="W4" id="WurfSichern4" value="true">
+                        <label for="WurfSichern4">behalten</label>
+                    </button>
+                </td>
+                <td>
+                    <button>
+                        <input type="checkbox" name="W5" id="WurfSichern5" value="true">
+                        <label for="WurfSichern5">behalten</label>
+                    </button>
+                </td>
+            </tr>
+        </table>
+        <button id="Wurf">Würfeln</button>
+    </nav>
+<!-- Ergebnistabelle -->
+    <table id="ergebnisliste">
+        <tr>
+            <th>Name</th>
+            <th>Beschreibung</th>
+            <th>Wert</th>
+            <th>setzten?</th>
+        </tr>
+        <tr>
+            <td>Einer</td>
+            <td>Summe der 1sen</td>
+            <td id="wertEiner">-</td>
+            <td><button id="setze1">als 1er setzten</button></td>
+        </tr>
+        <tr>
+            <td>Zweier</td>
+            <td>Summe der 2er</td>
+            <td id="wertZweier">-</td>
+            <td><button id="setze2">als 2er setzten</button></td>
+        </tr>
+        <tr>
+            <td>Dreier</td>
+            <td>Summe der 3er</td>
+            <td id="wertDreier">-</td>
+            <td><button id="setze3">als 3er setzten</button></td>
+        </tr>
+        <tr>
+            <td>Vierer</td>
+            <td>Summe der 4er</td>
+            <td id="wertVierer">-</td>
+            <td><button id="setze4">als 4er setzten</button></td>
+        </tr>
+        <tr>
+            <td>Fünfer</td>
+            <td>Summe der 5er</td>
+            <td id="wertFuenfer">-</td>
+            <td><button id="setze5">als 5er setzten</button></td>
+        </tr>
+        <tr>
+            <td>6er</td>
+            <td>Summe der 6er</td>
+            <td id="wertSechser">-</td>
+            <td><button id="setze6">als 6er setzten</button></td>
+        </tr>
+        <tr>
+            <td>Punkte</td>
+            <td>Bonus</td>
+            <td></td>
+            <td><button id="calculate1">Summe</button></td>
+        </tr>
+        <tr>
+            <td id="punkteOben">Punkte</td>
+            <td id="bonus">Bonus</td>
+            <th></th>
+            <td id="summeOben">Summe</td>
+        </tr>
+        <tr>
+            <td>_</td>
+            <td>_</td>
+            <td>_</td>
+            <td>_</td>
+        </tr>
+<!-- Ergebnisse besonders -->
+        <tr>
+            <td>3erPasch</td>
+            <td><button id="streiche3p">streichen</button></td>
+            <td id="wert3Pasch">-</td>
+            <td><button id="setze3p">als 3P setzen</button></td>
+        </tr>
+        <tr>
+            <td>4erPasch</td>
+            <td><button id="streiche4p">streichen</button></td>
+            <td id="wert4Pasch">-</td>
+            <td><button id="setze4p">als 4P setzen</button></td>
+        </tr>
+        <tr>
+            <td>kleine Straße</td>
+            <td>vierfach Zahlenfolge</td>
+            <td id="wertKlStr">-</td>
+            <td><button id="setzeKlStr">als kStraße setzen</button></td>
+        </tr>
+        <tr>
+            <td>große Straße</td>
+            <td>fünffach Zahlenfolge</td>
+            <td id="wertGrStr">-</td>
+            <td><button id="setzeGrStr">als gStraße setzen</button></td>
+        </tr>
+        <tr>
+            <td>FullHouse</td>
+            <td><button id="streicheFH">streichen</button></td>
+            <td id="wertFH">-</td>
+            <td><button id="setzeFH">als FullHouse setzen</button></td>
+        </tr>
+        <tr>
+            <td>Kniffel</td>
+            <td>5 gleiche</td>
+            <td id="wertKniffel">-</td>
+            <td><button id="setzeKniffel">als Kniffel setzen</button></td>
+        </tr>
+        <tr>
+            <td>Chance</td>
+            <td>keine Vorgabe</td>
+            <td id="wertChance">-</td>
+            <td><button id="setzeChance">als Chance setzen</button></td>
+        </tr>
+        <tr>
+            <td>Punkte1</td>
+            <td>Punkte2</td>
+            <td></td>
+            <td><button id="calculate2">Summe</button></td>
+        </tr>
+        <tr>
+            <td id="punkteUnten">Punte1</td>
+            <td id="punkteObenKopie">Punkte2</td>
+            <td></td>
+            <td id="summeUnten">Punkte</td>
+        </tr>
+    </table>
+    <a href="index.html"><Button>Neues Spiel</Button></a>
+    <script src="main.js"></script>
+</body>
+</html>
