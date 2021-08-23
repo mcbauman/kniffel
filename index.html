@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css" >
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+<link href="https://fonts.googleapis.com/css2?family=Gruppo&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Dice Game</title>
+</head>
+<body>
+<!-- Würfelbereich -->
+    <nav>
+        <table id="top">
+            <tr>
+                <th class="hide" scope=col>
+                    Würfel 1
+                </th>
+                <th class="hide" scope=col>
+                    Würfel 2
+                </th>
+                <th class="hide" scope=col>
+                    Würfel 3
+                </th>
+                <th class="hide" scope=col>
+                    Würfel 4
+                </th>
+                <th class="hide" scope=col>
+                    Würfel 5
+                </th>
+            </tr>
+            <tr id="gefalleneWürfel">
+                <td id="Wurfel1">-</td>
+                <td id="Wurfel2">-</td>
+                <td id="Wurfel3">-</td>
+                <td id="Wurfel4">-</td>
+                <td id="Wurfel5">-</td>
+            </tr>
+            <tr>
+                <td>
+                    <button>
+                        <input type="checkbox" name="W1" id="WurfSichern1" value="true">
+                        <label for="WurfSichern1">keep</label>
+                    </button>
+                </td>
+                <td>
+                    <button>
+                        <input type="checkbox" name="W2" id="WurfSichern2" value="true">
+                        <label for="WurfSichern2">keep</label>
+                    </button>
+                </td>
+                <td>
+                    <button>
+                        <input type="checkbox" name="W3" id="WurfSichern3" value="true">
+                        <label for="WurfSichern3">keep</label>
+                    </button>
+                </td>
+                <td>
+                    <button>
+                        <input type="checkbox" name="W4" id="WurfSichern4" value="true">
+                        <label for="WurfSichern4">keep</label>
+                    </button>
+                </td>
+                <td>
+                    <button>
+                        <input type="checkbox" name="W5" id="WurfSichern5" value="true">
+                        <label for="WurfSichern5">keep</label>
+                    </button>
+                </td>
+            </tr>
+        </table>
+        <button id="Wurf">throw</button>
+    </nav>
+<!-- Ergebnistabelle -->
+    <table id="ergebnisliste">
+        <tr>
+            <th>Name</th>
+            <th class="hide">dispription</th>
+            <th>value</th>
+            <th>set?</th>
+        </tr>
+        <tr>
+            <td>1's</td>
+            <td class="hide">sum 1's</td>
+            <td id="wertEiner">-</td>
+            <td><button id="setze1">set as 1's</button></td>
+        </tr>
+        <tr>
+            <td>2's</td>
+            <td class="hide">sum 2's</td>
+            <td id="wertZweier">-</td>
+            <td><button id="setze2">set as 2's</button></td>
+        </tr>
+        <tr>
+            <td>3's</td>
+            <td class="hide">sum 3's</td>
+            <td id="wertDreier">-</td>
+            <td><button id="setze3">set as 3's</button></td>
+        </tr>
+        <tr>
+            <td>4's</td>
+            <td class="hide">sum 4's</td>
+            <td id="wertVierer">-</td>
+            <td><button id="setze4">set as 4's</button></td>
+        </tr>
+        <tr>
+            <td>5's</td>
+            <td class="hide">sum 5's</td>
+            <td id="wertFuenfer">-</td>
+            <td><button id="setze5">set as 5's</button></td>
+        </tr>
+        <tr>
+            <td>6's</td>
+            <td class="hide">sum 6's</td>
+            <td id="wertSechser">-</td>
+            <td><button id="setze6">set as 6's</button></td>
+        </tr>
+        <tr>
+            <td>Punkte</td>
+            <td class="hide">Bonus</td>
+            <td></td>
+            <td><button id="calculate1">Summe</button></td>
+        </tr>
+        <tr>
+            <td id="punkteOben">Punkte</td>
+            <td class="hide" id="bonus">Bonus</td>
+            <th></th>
+            <td id="summeOben">sum</td>
+        </tr>
+        <tr>
+            <td>_</td>
+            <td class="hide">_</td>
+            <td>_</td>
+            <td>_</td>
+        </tr>
+<!-- Ergebnisse besonders -->
+        <tr>
+            <td>3 equal</td>
+            <td class="hide">3 equal</td>
+            <td id="wert3Pasch">-</td>
+            <td><button id="setze3p">set as 3eq</button></td>
+        </tr>
+        <tr>
+            <td>4 equal</td>
+            <td class="hide">4 equal</td>
+            <td id="wert4Pasch">-</td>
+            <td><button id="setze4p">set as 4</button></td>
+        </tr>
+        <tr>
+            <td>small sreet</td>
+            <td class="hide">4 in a row</td>
+            <td id="wertKlStr">-</td>
+            <td><button id="setzeKlStr">set as sm.street</button></td>
+        </tr>
+        <tr>
+            <td>big street</td>
+            <td class="hide">5 in a row</td>
+            <td id="wertGrStr">-</td>
+            <td><button id="setzeGrStr">set as street</button></td>
+        </tr>
+        <tr>
+            <td>FullHouse</td>
+            <td class="hide">2 equal & 3 equal</td>
+            <td id="wertFH">-</td>
+            <td><button id="setzeFH">set as fullHause</button></td>
+        </tr>
+        <tr>
+            <td>Yazee</td>
+            <td class="hide">5 equal</td>
+            <td id="wertKniffel">-</td>
+            <td><button id="setzeKniffel">set as Yazee</button></td>
+        </tr>
+        <tr>
+            <td>Chance</td>
+            <td class="hide">whatever</td>
+            <td id="wertChance">-</td>
+            <td><button id="setzeChance">set as chance</button></td>
+        </tr>
+        <tr>
+            <td>Punkte1</td>
+            <td class="hide">Punkte2</td>
+            <td></td>
+            <td><button id="calculate2">Summe</button></td>
+        </tr>
+        <tr>
+            <td id="punkteUnten">sum1</td>
+            <td id="punkteObenKopie">sum2</td>
+            <td class="hide"></td>
+            <td id="summeUnten">sum</td>
+        </tr>
+    </table>
+    <a href="index.html"><Button>new game</Button></a>
+    <script src="main.js"></script>
+</body>
+</html>

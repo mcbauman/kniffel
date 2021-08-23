@@ -1,0 +1,50 @@
+html{
+    background-image: url("pic.jpeg");
+    background-size: cover;
+    background-color: black;
+    text-align: center;
+    font-family: 'Gruppo', cursive;
+    font-size: 1.7em;
+}
+body{
+    max-width: 900px;
+    margin:auto;
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+}
+
+table{
+   background-color: rgba(0, 0, 0, 0.7);
+   color: white;
+   margin: 15px;
+}
+
+#gefalleneWürfel{
+    font-size: 2em;
+    background-color: white;
+    color: black;
+}
+
+#Wurf{
+   font-size: 2em;
+}
+
+#ergebnisliste{
+    width: 98%;
+}
+
+#top .hide{
+    display: none;
+}
+
+@media screen and (max-width:700px){
+    .hide{
+        display: none;
+    }
+    nav{
+        display:block;
+    }
+}
