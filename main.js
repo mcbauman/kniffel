@@ -238,7 +238,7 @@
 
     set4p.addEventListener("click", function(){
         if(w4p>=0){alert("nicht Schummeltn! 4er-Pasch hast Du schon")}else{
-            if(val1=val2&&val2==val3&&val3==val4||val1==val2&&val2==val3&&val3==val5||val1==val2&&val2==val4&&val4==val5||val1==val3&&val3==val4&&val4==val5||val2==val3&&val3==val4&&val4==val5){sumValEx=val1+val2+val3+val4+val5;
+            if(val1==val2&&val2==val3&&val3==val4||val1==val2&&val2==val3&&val3==val5||val1==val2&&val2==val4&&val4==val5||val1==val3&&val3==val4&&val4==val5||val2==val3&&val3==val4&&val4==val5){sumValEx=val1+val2+val3+val4+val5;
                 p4.textContent = sumValEx;
                 w4p=sumValEx;}else{ sumValEx=0;
                     p4.textContent = sumValEx;
