@@ -1,7 +1,6 @@
 html{
     background-image: url("pic.jpeg");
     background-size: cover;
-    background-color: black;
     text-align: center;
     font-family: 'Gruppo', cursive;
     font-size: 1.7em;
@@ -13,16 +12,14 @@ body{
 
 nav{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
-#top{
 
-}
 
 table{
    background-color: rgba(0, 0, 0, 0.7);
    color: white;
-   margin: 15px;
+   width: 80%;
 }
 
 #gefalleneWürfel{
@@ -33,10 +30,11 @@ table{
 
 #Wurf{
    font-size: 2em;
+   width: 20%;
 }
 
 #ergebnisliste{
-    width: 98%;
+    width: 100%;
 }
 
 #top .hide{
@@ -49,5 +47,11 @@ table{
     }
     nav{
         display:block;
+    }
+    table{
+        width: 100%;
+    }
+    #Wurf{
+        width: 100%;
     }
 }
