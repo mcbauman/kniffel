@@ -40,7 +40,7 @@ table{
 
 #ergebnisliste{
     width: 100%;
-    margin-top: 20%;
+    margin-top: 15%;
 }
 
 #top .hide{
@@ -59,5 +59,8 @@ table{
     }
     #Wurf{
         width: 100%;
+    }
+    #ergebnisliste{
+        margin-top: 200px;
     }
 }
